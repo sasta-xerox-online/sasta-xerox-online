@@ -9,17 +9,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Marquee Offer Bar -->
+    <!-- Marquee Offer Bar (মাঝখানে ফাঁকা জায়গা নিয়ে) -->
     <div class="top-offer">
         <marquee behavior="scroll" direction="left" scrollamount="6">
-            🔥 বিশেষ অফার: PDF Printout মাত্র ₹1.20 (500+ page) | PVC Card ₹30 থেকে | PF-এর টাকা তোলা ও KYC আপডেট | সারা ভারত থেকে অর্ডার নেওয়া হয়!
+            <span class="offer-text">🔥 বিশেষ অফার: PDF Printout মাত্র ₹1.20 (500+ page) &nbsp; | &nbsp; PVC Card ₹30 থেকে &nbsp; | &nbsp; PF-এর টাকা তোলা ও KYC আপডেট &nbsp; | &nbsp; সারা ভারত থেকে অর্ডার নেওয়া হয়! 🔥</span>
         </marquee>
     </div>
 
-    <!-- Header Section -->
+    <!-- Header Section (দোকানের নাম বড় ও আকর্ষণীয়) -->
     <header>
         <p class="welcome-text">WELCOME TO OUR SERVICE CENTER</p>
-        <h1 class="shop-name">সস্তা জেরক্স এন্ড অনলাইন সেন্টার</h1>
+        <h1 class="shop-name">সস্তা জেরক্স এন্ড<br>অনলাইন সেন্টার</h1>
         <p class="subtitle">আপনার সব অনলাইন কাজ এখন এক জায়গায়</p>
     </header>
 
@@ -33,8 +33,9 @@
 
     <!-- Top Highlighted Services -->
     <section class="top-services" id="special-services">
-        <div class="section-title">
-            <span class="star">⭐</span> বিশেষ পরিষেবা
+        <!-- বিশেষ পরিষেবা (বাটনের মত) -->
+        <div class="section-title-wrapper">
+            <div class="button-style-title"><span class="star">⭐</span> বিশেষ পরিষেবা</div>
         </div>
         
         <div class="card-container">
@@ -44,6 +45,10 @@
                 <h3>PDF Printout</h3>
                 <div class="price-box">₹1.20 • 500+ pages</div>
                 <p class="desc">দুই পাশে প্রিন্ট। ৫০০ পৃষ্ঠার বেশি অর্ডারের জন্য। Delivery charge customer-এর।</p>
+                <!-- WhatsApp Button 1 -->
+                <a href="https://wa.me/918900718578?text=আমি%20PDF%20Printout-এর%20জন্য%20অর্ডার%20দিতে%20চাই" class="card-wa-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> এখনই WhatsApp করুন
+                </a>
             </div>
 
             <!-- Card 2: PVC -->
@@ -52,34 +57,42 @@
                 <h3>PVC Card Printing</h3>
                 <div class="price-box">₹30 থেকে</div>
                 <p class="desc">১-৪ কপি ₹৪৫/টি • ৫-১৫ কপি ₹৩৫/টি • ১৬+ কপি ₹৩০/টি। সারা ভারত থেকে অর্ডার নেওয়া হয়।</p>
+                <!-- WhatsApp Button 2 -->
+                <a href="https://wa.me/918900718578?text=আমি%20PVC%20Card%20প্রিন্ট%20করতে%20চাই" class="card-wa-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> এখনই WhatsApp করুন
+                </a>
             </div>
 
             <!-- Card 3: PF Service -->
             <div class="highlight-card">
                 <div class="card-number">03</div>
                 <h3>PF Service</h3>
-                <div class="price-box">টাকা তোলা ও KYC Update</div>
+                <div class="price-box">টাকা তোলা ও KYC</div>
                 <p class="desc">PF-এর টাকা তোলা ও KYC Update সযত্নে করা হয়। বিশেষভাবে হাইলাইটেড।</p>
+                <!-- WhatsApp Button 3 -->
+                <a href="https://wa.me/918900718578?text=আমি%20PF-এর%20কাজের%20বিষয়ে%20জানতে%20চাই" class="card-wa-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> এখনই WhatsApp করুন
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Other Services Grid -->
     <section class="other-services">
-        <h2 class="section-title">আমাদের অন্যান্য গুরুত্বপূর্ণ পরিষেবা</h2>
+        <h2 class="section-title text-center">আমাদের অন্যান্য গুরুত্বপূর্ণ পরিষেবা</h2>
         <div class="service-grid">
             <div class="service-item">Lamination & Spiral Binding</div>
             <div class="service-item">Aadhaar Card Download / Correction / e-KYC</div>
-            <div class="service-item">Voter Card Download / New Application / Transfer</div>
+            <div class="service-item">Voter Card Download / New App / Transfer</div>
             <div class="service-item">PAN Card New Application / Correction</div>
             <div class="service-item">Ration Card New Application / Correction</div>
-            <div class="service-item">Income Certificate & Caste Certificate</div>
+            <div class="service-item">Income & Caste Certificate</div>
             <div class="service-item">Pradhan / BDO / SDO Certificate</div>
             <div class="service-item">Land Information & Land Khajna</div>
             <div class="service-item">All School / College / Job Forms</div>
             <div class="service-item">Train, Flight & Bus Ticket</div>
             <div class="service-item">Electricity Bill Payment</div>
-            <div class="service-item">Udyam Registration (MSME) & Trade License</div>
+            <div class="service-item">Udyam (MSME) & Trade License</div>
         </div>
     </section>
 
@@ -97,7 +110,7 @@
         </div>
     </footer>
 
-    <!-- WhatsApp Floating Pulse Button -->
+    <!-- WhatsApp Floating Pulse Button (Main) -->
     <a href="https://wa.me/918900718578" class="whatsapp-float" target="_blank" title="WhatsApp-এ মেসেজ করুন">
         <i class="fab fa-whatsapp"></i>
     </a>

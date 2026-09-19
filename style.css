@@ -1,13 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Tiro+Bangla&family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tiro+Bangla&family=Poppins:wght@400;600;700;800&display=swap');
 
 :root {
     --primary-color: #0b5ed7;
     --bg-color: #f4f6f9;
     --text-color: #333;
-    --card-bg: #ffffff;
     --accent-yellow: #ffc107;
     --whatsapp-green: #25d366;
+    --whatsapp-hover: #1ebc59;
     --gradient-text: linear-gradient(90deg, #ff007f, #7928ca, #0070f3, #00dfd8);
+    --card-highlight-bg: linear-gradient(135deg, #fff3e0 0%, #ffffff 50%, #e8f5e9 100%);
+    --grid-highlight-bg: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
 }
 
 * {
@@ -24,41 +26,50 @@ body {
     overflow-x: hidden;
 }
 
-/* 1. Marquee (চলন্ত অফার) */
+/* 1. Marquee (বিশেষ অফার মাঝখানে ফাঁকা জায়গা নিয়ে) */
 .top-offer {
     background-color: var(--accent-yellow);
     color: #000;
-    padding: 8px 0;
+    padding: 15px 0; /* More padding for empty space */
     font-weight: 700;
-    font-size: 14px;
+    font-size: 16px;
     letter-spacing: 0.5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-/* 2. Header & Shop Name Animation */
+.offer-text {
+    padding: 0 50px; /* Space around the text */
+}
+
+/* 2. Header & Shop Name (দোকানের নাম বড় ও আকর্ষণীয়) */
 header {
     text-align: center;
-    padding: 50px 20px 30px;
+    padding: 50px 20px 40px;
     background: #fff;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
 .welcome-text {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #666;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    font-weight: 600;
 }
 
 .shop-name {
-    font-size: 2.8rem;
-    font-weight: 700;
+    font-size: 3.8rem; /* Made bigger */
+    font-weight: 800; /* Bolder */
+    line-height: 1.2;
     background: var(--gradient-text);
     background-size: 300% 300%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: gradientText 6s ease infinite;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    /* Added attractive 3D text shadow */
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.15);
 }
 
 @keyframes gradientText {
@@ -68,12 +79,12 @@ header {
 }
 
 .subtitle {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: #444;
     font-weight: 600;
 }
 
-/* 3. India Banner */
+/* 3. India Banner (Highlight Base) */
 .india-banner {
     margin: 30px auto;
     max-width: 800px;
@@ -83,37 +94,42 @@ header {
 .india-content {
     background: linear-gradient(135deg, #ff9933 0%, #ffffff 50%, #138808 100%);
     border-radius: 12px;
-    padding: 20px;
+    padding: 22px;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    position: relative;
-    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
 }
 
 .india-content h2 {
     color: #000;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     text-shadow: 1px 1px 3px rgba(255,255,255,0.9);
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
-.india-content p {
-    font-weight: 600;
-    color: #222;
-}
-
-/* 4. Top Services Cards */
+/* 4. Top Services Cards (Highlight Colors applied to all boxes) */
 .top-services {
     max-width: 1100px;
     margin: 40px auto;
     padding: 0 20px;
 }
 
-.section-title {
+/* বিশেষ পরিষেবা বাটনের মত */
+.section-title-wrapper {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.button-style-title {
+    display: inline-block;
+    background: linear-gradient(45deg, #0b5ed7, #00dfd8);
+    color: #fff;
+    padding: 12px 35px;
+    border-radius: 50px;
     font-size: 1.5rem;
     font-weight: 700;
-    margin-bottom: 25px;
-    color: #222;
+    box-shadow: 0 6px 15px rgba(11, 94, 215, 0.3);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    letter-spacing: 1px;
 }
 
 .card-container {
@@ -124,36 +140,38 @@ header {
 }
 
 .highlight-card {
-    background: var(--card-bg);
+    /* Using a soft highlight gradient based on the India theme */
+    background: var(--card-highlight-bg);
     border-radius: 16px;
     padding: 30px 25px;
     width: 320px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
-    position: relative;
     border-top: 5px solid var(--primary-color);
+    display: flex;
+    flex-direction: column;
 }
 
 .highlight-card:hover {
     transform: translateY(-12px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
 }
 
 .card-number {
-    font-size: 0.9rem;
-    color: #999;
-    font-weight: 600;
+    font-size: 1rem;
+    color: #0b5ed7;
+    font-weight: 800;
     margin-bottom: 10px;
 }
 
 .highlight-card h3 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     color: #111;
     margin-bottom: 15px;
 }
 
 .price-box {
-    background-color: #f0f4f8;
+    background-color: #fff;
     color: var(--primary-color);
     font-size: 1.2rem;
     font-weight: 700;
@@ -161,44 +179,83 @@ header {
     border-radius: 8px;
     display: inline-block;
     margin-bottom: 15px;
+    border: 1px solid rgba(11,94,215,0.2);
 }
 
 .desc {
     font-size: 0.95rem;
-    color: #666;
+    color: #555;
+    margin-bottom: 25px;
+    flex-grow: 1;
 }
 
-/* 5. Other Services Grid */
+/* WhatsApp Buttons in Highlight Cards */
+.card-wa-btn {
+    display: block;
+    text-align: center;
+    background-color: var(--whatsapp-green);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 12px 0;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+}
+
+.card-wa-btn:hover {
+    background-color: var(--whatsapp-hover);
+    transform: scale(1.03);
+    color: #fff;
+}
+
+.card-wa-btn i {
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+/* 5. Other Services Grid (Highlight Colors applied) */
 .other-services {
     max-width: 1100px;
     margin: 50px auto;
     padding: 0 20px;
 }
 
+.text-center {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.6rem;
+    color: #222;
+    font-weight: 700;
+}
+
 .service-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 15px;
 }
 
 .service-item {
-    background: var(--card-bg);
-    padding: 18px 20px;
-    border-radius: 10px;
-    font-size: 0.95rem;
+    /* Giving boxes a highlight gradient */
+    background: var(--grid-highlight-bg);
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 1rem;
     font-weight: 600;
-    color: #444;
-    border: 1px solid #eaeaea;
+    color: #333;
+    border: 1px solid #dce1e6;
     transition: all 0.3s ease;
-    cursor: default;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    text-align: center;
 }
 
 .service-item:hover {
-    background-color: var(--primary-color);
+    background: linear-gradient(135deg, #0b5ed7 0%, #00dfd8 100%);
     color: #fff;
-    border-color: var(--primary-color);
-    transform: scale(1.03);
-    box-shadow: 0 5px 15px rgba(11, 94, 215, 0.2);
+    border-color: transparent;
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(11, 94, 215, 0.3);
 }
 
 /* 6. Footer */
@@ -218,12 +275,12 @@ footer {
 
 .shop-details h3 {
     color: #fff;
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin-bottom: 15px;
 }
 
 .shop-details p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     margin-bottom: 8px;
     color: #cbd5e1;
 }
@@ -232,11 +289,11 @@ footer {
     text-align: center;
     border-top: 1px solid #334155;
     padding-top: 20px;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: #94a3b8;
 }
 
-/* 7. WhatsApp Pulse Animation */
+/* 7. WhatsApp Floating Pulse Animation */
 .whatsapp-float {
     position: fixed;
     bottom: 30px;
@@ -264,8 +321,8 @@ footer {
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    .shop-name { font-size: 2.2rem; }
-    .subtitle { font-size: 1rem; }
-    .highlight-card { width: 100%; max-width: 380px; }
+    .shop-name { font-size: 2.6rem; }
+    .subtitle { font-size: 1.1rem; }
+    .highlight-card { width: 100%; max-width: 400px; }
     .whatsapp-float { width: 55px; height: 55px; font-size: 30px; bottom: 20px; right: 20px;}
 }
