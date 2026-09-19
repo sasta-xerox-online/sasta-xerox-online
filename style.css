@@ -1,39 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800;900&display=swap');
+
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial,"Noto Sans Bengali","Noto Sans",sans-serif;background:#f6f7f9;color:#20242a;line-height:1.65}
-.container{width:min(1080px,92%);margin:auto}
-.header{background:#fff;border-bottom:1px solid #ddd;position:sticky;top:0;z-index:10}
-.header-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:15px 0}
-.brand{font-size:24px;font-weight:800}
-.whatsapp{color:#147a3e;text-decoration:none;font-weight:700}
-.hero{background:#fff;padding:55px 0 50px}
-.tag{display:inline-block;background:#eef5ff;padding:7px 13px;border-radius:20px;margin:0 0 15px;font-weight:700}
-h1{font-size:clamp(34px,6vw,62px);line-height:1.15;margin:0 0 22px;max-width:900px}
-.intro{font-size:20px;max-width:780px;color:#4d555e}
-.btn{display:inline-block;margin-top:14px;background:#147a3e;color:#fff;text-decoration:none;padding:12px 20px;border-radius:8px;font-weight:700}
-section{padding:48px 0}
-h2{font-size:34px;margin:0 0 25px}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.card{background:#fff;border:1px solid #ddd;border-radius:14px;padding:24px;box-shadow:0 3px 12px rgba(0,0,0,.05)}
-.featured-card{border-top:5px solid #147a3e}
-.number{font-weight:900;font-size:18px}
-h3{font-size:25px;margin:8px 0}
-.price{font-size:20px;font-weight:800;margin:8px 0}
-.services{background:#fff}
-.service-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.service{background:#f5f6f8;border:1px solid #e1e3e6;border-radius:9px;padding:14px 16px;font-weight:600}
-.delivery{background:#eef5ff}
-.delivery p{font-size:19px}
-.contact{background:#fff}
-.contact p{font-size:18px}
-.contact a{color:#147a3e}
-footer{background:#20242a;color:#fff;text-align:center;padding:22px}
-@media(max-width:750px){
-  .header-inner{display:block}
-  .whatsapp{display:inline-block;margin-top:5px}
-  .hero{padding:38px 0}
-  h1{font-size:39px}
-  .intro{font-size:18px}
-  .cards,.service-grid{grid-template-columns:1fr}
-  h2{font-size:29px}
+body{margin:0;background:#f7f9fc;color:#172033;font-family:"Noto Sans Bengali",Arial,sans-serif;line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,92%);margin:auto}
+
+.top-strip{background:#101a2d;color:#dce5f5;font-size:13px}
+.top-inner{display:flex;justify-content:space-between;gap:15px;padding:8px 0}
+.top-inner a{color:#7ee2a8;font-weight:700}
+
+.header{background:rgba(255,255,255,.96);border-bottom:1px solid #e8ebf1;position:sticky;top:0;z-index:20;backdrop-filter:blur(12px)}
+.nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-icon{width:45px;height:45px;border-radius:13px;background:linear-gradient(135deg,#1769e0,#10a36a);color:#fff;display:grid;place-items:center;font-size:27px;box-shadow:0 8px 20px #1769e033;animation:float 3s ease-in-out infinite}
+.logo b{display:block;font-size:22px;line-height:1.15}
+.logo small{display:block;color:#657083;font-size:12px;font-weight:600;margin-top:2px}
+.nav-btn,.primary-btn{background:linear-gradient(135deg,#1769e0,#0e8f69);color:#fff;padding:11px 18px;border-radius:10px;font-weight:800;box-shadow:0 8px 22px #1769e033}
+.nav-btn:hover,.primary-btn:hover{transform:translateY(-2px)}
+
+.offer-bar{overflow:hidden;background:#fff4d8;border-bottom:1px solid #f4df9e;color:#765300;font-weight:700;white-space:nowrap}
+.ticker{display:flex;width:max-content;animation:marquee 22s linear infinite}
+.ticker span{padding:8px 25px}
+
+.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#eef6ff 0%,#fff 48%,#ecfff6 100%);padding:75px 0 70px}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:55px;align-items:center;position:relative;z-index:1}
+.welcome,.eyebrow{color:#1769e0;font-size:13px;font-weight:900;letter-spacing:.7px}
+.hero h1{font-size:clamp(38px,6vw,68px);line-height:1.15;margin:12px 0 20px;font-weight:900}
+.hero h1 span{color:#0e8f69;position:relative}
+.hero p{font-size:18px;color:#586477;max-width:700px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:27px}
+.secondary-btn{padding:11px 18px;border:1px solid #d6dce7;border-radius:10px;background:#fff;font-weight:800}
+.trust-row{display:flex;gap:20px;flex-wrap:wrap;margin-top:24px;color:#47546a;font-size:13px;font-weight:700}
+
+.hero-card{background:linear-gradient(145deg,#111d33,#243a61);color:#fff;border-radius:26px;padding:31px;box-shadow:0 25px 55px #10204035;transform:rotate(2deg);animation:cardFloat 4s ease-in-out infinite}
+.shop-badge{display:inline-block;background:#f6c64b;color:#172033;padding:6px 11px;border-radius:30px;font-size:11px;font-weight:900}
+.hero-card-title{font-size:31px;line-height:1.25;margin:24px 0 18px}
+.hero-card-title strong{color:#6fe1ad}
+.hero-location{font-size:13px;color:#d8e1ef}
+.hero-contact{font-size:23px;font-weight:900;color:#7ee2a8;margin:12px 0 22px}
+.mini-lines{display:grid;grid-template-columns:1fr auto;gap:9px;border-top:1px solid #ffffff22;padding-top:18px}
+.mini-lines span{color:#d7e0ef}.mini-lines b{color:#fff}
+
+.hero-glow{position:absolute;border-radius:50%;filter:blur(5px);opacity:.35}
+.glow1{width:280px;height:280px;background:#78b6ff;top:-120px;right:20%}
+.glow2{width:220px;height:220px;background:#76e0ae;bottom:-130px;left:10%}
+
+section{padding:70px 0}
+.featured{background:#f7f9fc}
+.section-heading{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:28px}
+.section-heading h2,.india h2,.contact h2{font-size:32px;line-height:1.25;margin:6px 0 0}
+.section-heading p{color:#697487;margin:0}
+.centered{text-align:center;display:block}
+
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.feature-card{background:#fff;border:1px solid #e3e8f0;border-radius:20px;padding:25px;position:relative;overflow:hidden;transition:.3s;box-shadow:0 10px 28px #1b2b4410}
+.feature-card:hover{transform:translateY(-8px);box-shadow:0 18px 38px #1b2b441b}
+.feature-card:before{content:"";position:absolute;left:0;top:0;width:100%;height:5px;background:#1769e0}
+.feature-card.pvc:before{background:#0e8f69}.feature-card.pf:before{background:#e09a16}
+.card-top{display:flex;justify-content:space-between;align-items:center}
+.service-icon{width:48px;height:48px;border-radius:14px;background:#edf4ff;display:grid;place-items:center;font-size:23px}
+.pvc .service-icon{background:#eafff4}.pf .service-icon{background:#fff6df}
+.badge{font-size:12px;color:#8490a3;font-weight:900}
+.feature-card h3{font-size:23px;margin:18px 0 5px}
+.big-price{font-size:34px;font-weight:900;color:#1769e0}
+.pvc .big-price{color:#0e8f69}.pf .big-price{color:#c58200}
+.big-price small{font-size:15px;color:#748096}
+.condition{font-weight:800;color:#4e5b70;margin:4px 0 12px}
+.feature-card p{font-size:13px;color:#687386}
+.price-list{display:grid;gap:5px;margin:8px 0 12px;font-size:12px;color:#667186}
+.price-list span{display:flex;justify-content:space-between;border-bottom:1px dashed #e2e6ec;padding-bottom:3px}
+.card-link{display:inline-block;margin-top:8px;color:#1769e0;font-weight:900;font-size:13px}
+
+.services{background:#fff;border-top:1px solid #e8ebf0;border-bottom:1px solid #e8ebf0}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px}
+.service-item{background:#f8fafc;border:1px solid #e4e8ef;border-radius:12px;padding:14px;display:flex;gap:10px;align-items:center;min-height:58px;transition:.25s}
+.service-item:hover{background:#edf5ff;border-color:#c7dcfb;transform:translateY(-2px)}
+.service-item span{font-size:20px}.service-item b{font-size:13px}
+
+.india{background:linear-gradient(135deg,#10203a,#183c57);color:#fff}
+.india-box{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:25px}
+.india-icon{font-size:52px}
+.india .eyebrow{color:#7ee2a8}
+.india h2{margin:5px 0 8px}
+.india p{color:#cbd6e5;margin:0;max-width:700px}
+
+.contact{background:#f7f9fc}
+.contact-grid{display:grid;grid-template-columns:1fr 330px;gap:35px;align-items:center}
+.contact p{color:#687386;max-width:700px}
+.contact-card{background:#fff;border:1px solid #e2e7ef;border-radius:20px;padding:25px;box-shadow:0 12px 30px #1b2b4410}
+.contact-card span{display:block;color:#778398;font-size:13px}.contact-card strong{display:block;font-size:27px;margin:4px 0 15px;color:#0e8f69}
+
+footer{background:#0e1728;color:#aeb9ca;text-align:center;padding:20px;font-size:12px}
+.floating-wa{position:fixed;right:18px;bottom:18px;width:58px;height:58px;border-radius:50%;background:#16a765;color:#fff;display:grid;place-items:center;font-size:27px;z-index:30;box-shadow:0 10px 25px #0003}
+
+.pulse{animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 #1769e044}50%{box-shadow:0 0 0 10px #1769e000}}
+@keyframes marquee{to{transform:translateX(-50%)}}
+@keyframes float{50%{transform:translateY(-5px)}}
+@keyframes cardFloat{50%{transform:rotate(0deg) translateY(-7px)}}
+
+@media(max-width:850px){
+  .top-inner{display:none}
+  .nav{min-height:68px}
+  .logo b{font-size:18px}.logo small{font-size:10px}
+  .nav-btn{font-size:12px;padding:9px 12px}
+  .hero{padding:48px 0}
+  .hero-grid{grid-template-columns:1fr;gap:35px}
+  .hero h1{font-size:42px}
+  .hero-card{transform:none}
+  .feature-grid{grid-template-columns:1fr}
+  .service-grid{grid-template-columns:1fr 1fr}
+  .india-box{grid-template-columns:auto 1fr}
+  .india-box .primary-btn{grid-column:1/-1;justify-self:start}
+  .contact-grid{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+  .container{width:min(94%,1120px)}
+  .hero h1{font-size:35px}
+  .hero p{font-size:16px}
+  .section-heading{display:block}
+  .section-heading p{margin-top:8px;font-size:13px}
+  .service-grid{grid-template-columns:1fr}
+  .hero-card-title{font-size:26px}
+  .india-box{display:block}
+  .india-icon{margin-bottom:8px}
+  .india .primary-btn{display:inline-block;margin-top:18px}
 }
